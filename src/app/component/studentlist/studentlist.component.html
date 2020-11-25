@@ -1,0 +1,72 @@
+<div class="container-center">
+
+<div class="row">
+
+<div class="col-md-4">
+  
+</div>
+<div class="col-md-4">
+
+
+</div>
+
+  <div class="col-md-4">
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 ">
+ 
+  <nav class="my-2 my-md-0 mr-md-3">
+    <input type="button" class="btn btn-outline-primary"(click)="onLogout()" value="Logout" />
+  </nav>
+  
+  <a class="nav-link" class="btn btn-outline-primary" routerLink="/studentcreate">studentcreate</a>
+
+</div>
+    
+  </div>
+
+
+</div>
+</div>
+
+<div class="container">
+    <!-- No data message -->
+   <div class="form-group">
+     
+    <input type="text" class="form-control"[(ngModel)]="names" placeholder="search here">
+  </div>
+  
+
+    <p *ngIf="Student.length <= 0" class="no-data text-center">There is no employee added yet!</p>
+  
+    <!-- Employee list -->
+
+    <table class=" table table-bordered" *ngIf="Student.length > 0">
+      <thead class="table-success">
+        <tr>
+          <th scope="col">Student ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Course</th>
+          <th scope="col">Phone No</th>
+          <th scope="col center">Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stud of Student|search:names; let i = index">
+          <th scope="row">{{stud._id}}</th>
+          <td>{{stud.name}}</td>
+          <td>{{stud.email}}</td>
+          <td>{{stud.course}}</td>
+          <td>{{stud.phoneNumber}}</td>
+          <td class="text-center edit-block">
+            <span class="edit" [routerLink]="['/studentedit/', stud._id]">
+              <button type="button" class="btn btn-success btn-sm">Edit</button>
+            </span>
+            <span class="delete" (click)="removestudent(stud, i)">
+              <button type="button" class="btn btn-danger btn-sm">Delete</button>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ 

@@ -1,32 +1,46 @@
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand"  routerLink="/home">Navbar</a>
     <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse " id="collapsibleNavbar">
       <ul class="navbar-nav ">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link"  routerLink="/home" >Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" routerLink="/about" >About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li> 
+        
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
               Gallery
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Link 1</a>
+              <a class="dropdown-item" routerLink="/gallery">Gallery</a>
               <a class="dropdown-item" href="#">Link 2</a>
               
             </div>
           </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Registration</a>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact">Contact</a>
           </li> 
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/studentlist">StudentData</a>
+         </li>       
+         
       </ul>
+      <div class="d-flex flex-column flex-md-row align-items-left p-3 px-md-4 mb-3 ">
+    
+        <nav class="my-2 my-md-0 mr-md-3">
+          <a class="btn btn-outline-primary" routerLinkActive="active" routerLink="/signlogin">Login</a>
+        </nav>
+        <a class="btn btn-outline-primary" routerLinkActive="active" routerLink="/singup">Register</a>
+         
+      </div>
     </div>  
+   
   </nav>
+  <div class="footer">
+    <p>Footer</p>
+  </div>
